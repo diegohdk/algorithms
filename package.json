@@ -6,8 +6,8 @@
     "node": ">=16"
   },
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
+    "build": "esbuild --platform=node --target=node16 --outdir=dist --outbase=packages --tree-shaking=true --minify --log-level=silent packages/**/*.ts",
+    "watch": "esbuild --platform=node --target=node16 --outdir=dist --outbase=packages --tree-shaking=true --minify --log-level=silent --watch packages/**/*.ts",
     "lint": "eslint --ext .ts ./packages",
     "lint:fix": "eslint --fix --ext .ts ./packages",
     "format": "prettier \"./packages/**/*.ts\"",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@types/node": "18.6.3",
     "@typescript-eslint/eslint-plugin": "5.31.0",
+    "esbuild": "0.14.51",
     "eslint": "8.20.0",
     "eslint-plugin-prettier": "4.2.1",
     "husky": "8.0.1",
