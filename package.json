@@ -6,8 +6,8 @@
     "node": ">=16"
   },
   "scripts": {
-    "build": "esbuild --platform=node --target=node16 --outdir=dist --outbase=packages --tree-shaking=true --minify --log-level=silent packages/**/*.ts",
-    "watch": "esbuild --platform=node --target=node16 --outdir=dist --outbase=packages --tree-shaking=true --minify --log-level=silent --watch packages/**/*.ts",
+    "build": "esbuild --platform=node --target=node16 --format=cjs --outdir=dist --outbase=packages --tree-shaking=true --minify --log-level=silent packages/**/*.ts",
+    "watch": "esbuild --platform=node --target=node16 --format=cjs --outdir=dist --outbase=packages --tree-shaking=true --minify --log-level=silent --watch packages/**/*.ts",
     "lint": "eslint --ext .ts ./packages",
     "lint:fix": "eslint --fix --ext .ts ./packages",
     "format": "prettier \"./packages/**/*.ts\"",
