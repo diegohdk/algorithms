@@ -1,4 +1,5 @@
 import { range } from '../utils'
+import { MergeSort } from './MergeSort'
 import { QuickSort } from './QuickSort'
 
 const size = 10000000
@@ -14,7 +15,11 @@ const array2 = range(size, true)
 console.time('quick sort')
 console.timeLog('quick sort', QuickSort.create().sort(array2))
 
+const array3 = range(size, true)
+console.time('merge sort')
+console.timeLog('merge sort', MergeSort.create().sort(array3))
+
 // takes way too long...
-// const array3 = range(size, true)
+// const arrayN = range(size, true)
 // console.time('bubble sort')
-// console.timeLog('bubble sort', BubbleSort.create().sort(array3))
+// console.timeLog('bubble sort', BubbleSort.create().sort(arrayN))
